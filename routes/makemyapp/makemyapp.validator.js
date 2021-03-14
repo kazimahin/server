@@ -87,7 +87,7 @@ module.exports = async (value)=>{
     }
 
 
-    if(!code_type){
+    if(!code_type || code_type == 0){
         error.code_type = "code type is empty"
     }
 

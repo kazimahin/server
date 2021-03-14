@@ -7,14 +7,14 @@ const cors = require("cors")
 const cookieParser = require("cookie-parser")
 
 
+require("dotenv").config()
 
 //use module 
-mongoose.connect("mongodb://127.0.0.1:27017/test",{useNewUrlParser: true,useUnifiedTopology: true})
+mongoose.connect(process.env.MONGODB_URI,{useNewUrlParser: true,useUnifiedTopology: true})
         .then(()=>console.log("mongoose connected succesfully"))
         .catch((e)=>console.log("mongoose not connnected an error is "+e))
 
 app.use(express.json())
-require("dotenv").config()
 app.use(morgan("dev"))
 app.use(cors({credentials: true, origin: true}))
 app.use(cookieParser())
@@ -26,7 +26,7 @@ const makemyapp = require('./routes/makemyapp/')
 const com_data = require("./routes/com_data/")
 const website = require("./routes/website/")
 // use middleware custom function
-// app.use('/',(req,res)=>res.send("hellow world"))
+app.use('/',(req,res)=>res.send("hellow world"))
 app.use('/auth',auth)
 
 
@@ -39,5 +39,5 @@ app.use("/website",website )
  
 
 
-app.listen(4000,()=>console.log(`server is running on port ${4000}`))
+app.listen(process.env.PORT,()=>console.log(`server is running on port ${process.env.PORT}`))
 
