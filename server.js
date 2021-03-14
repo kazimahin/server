@@ -26,7 +26,7 @@ const makemyapp = require('./routes/makemyapp/')
 const com_data = require("./routes/com_data/")
 const website = require("./routes/website/")
 // use middleware custom function
-app.use('/',(req,res)=>res.send("hellow world"))
+// app.use('/',(req,res)=>res.send("hellow world"))
 app.use('/auth',auth)
 
 
