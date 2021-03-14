@@ -25,7 +25,7 @@ module.exports = async (req,res)=>{
 
         const token = await jwt.sign({email:alldetails.email,name:alldetails.name,phone:alldetails.phone},"mahin",{expiresIn:"2d"})
          
-        res.cookie("Authorization","Bearer "+token,{ domain: 'instbd.xyz' }).status(200).send("cookie set succesfully"+token)
+        res.cookie("Authorization","Bearer "+token).status(200).send("cookie set succesfully"+token)
  
 
     }else{
