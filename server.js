@@ -38,7 +38,6 @@ app.use("/com_data" , com_data)
 app.use("/website",website )
  
 
-console.log(process.env);
-
+ 
 app.listen(process.env.PORT,()=>console.log(`server is running on port ${process.env.PORT}`))
 
