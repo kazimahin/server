@@ -12,7 +12,7 @@ module.exports = async (req,res)=>{
     console.log({uservalidation,value:req.body});
     if(uservalidation.isvalid){
 
-        const token = await jwt.sign({email},"mahin",{expiresIn:"2d"})
+        const token = await jwt.sign({email,catagory},"mahin",{expiresIn:"2d"})
          
         res.cookie("Authorization","Bearer "+token).status(200).send("cookie set succesfully"+token)
 

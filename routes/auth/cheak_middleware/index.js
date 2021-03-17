@@ -1,24 +1,19 @@
 
 const jwt = require("jsonwebtoken")
+const UserData = require("../../../functions/GetUserDetails")
 
 
 module.exports =(req,res,next)=>{
 
     try{
-        const token= req.cookies.Authorization.split(" ")[1]
- 
-        const decode =  jwt.verify(token,"mahin")
-        
-         
+        const data = UserData(req)
 
-        res.send({valid:true,auth:"admin"})
+         res.send({valid:true,data})
 
     }catch{
-        res.status(200).send("token not valid")
-     }
+        res.status(500).send("token not valid")
+    }
 
-     
+    
+    
 }
-
-
- 
