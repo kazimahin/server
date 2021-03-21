@@ -5,6 +5,8 @@ const mongoose = require("mongoose")
 const morgan = require("morgan")
 const cors = require("cors")
 const cookieParser = require("cookie-parser")
+const https = require("https")
+const fs = require("fs")
 
 
 require("dotenv").config()
@@ -35,9 +37,16 @@ app.use('/makemyapp',makemyapp)
 app.use('/com_auth',com_auth)
 app.use("/com_data" , com_data)
 app.use("/website",website )
-// app.use('/',(req,res)=>res.send("hellow world"))
+app.use('/',(req,res)=>res.send("hellow world"))
 
 
+
+const options = { key: fs.readFileSync('key.pem'), cert: fs.readFileSync('cert.pem') };      
+const sslServer = https.createServer(options,app)
  
-app.listen(process.env.PORT,()=>console.log(`server is running on port ${process.env.PORT}`))
+
+
+sslServer.listen(process.env.PORT,()=>console.log(`server is running on port ${process.env.PORT}`))
+
+// app.listen(process.env.PORT,()=>console.log(`server is running on port ${process.env.PORT}`))
 
