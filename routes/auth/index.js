@@ -9,4 +9,4 @@ const cheak_middleware = require("./cheak_middleware/")
 Router.post("/cheak",cheak_middleware)
 
  
-module.exports = Router
+module.exports = Router 
