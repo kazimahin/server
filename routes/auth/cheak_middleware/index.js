@@ -12,7 +12,7 @@ module.exports =(req,res,next)=>{
   
     }catch{
         res.status(500).send("token not valid") 
-    } 
+    }  
  
       
 }  
