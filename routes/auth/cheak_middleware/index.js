@@ -11,7 +11,7 @@ module.exports =(req,res,next)=>{
          res.send({valid:true,data})
   
     }catch{
-        res.status(500).send("token not valid")
+        res.status(500).send("token not valid") 
     } 
  
       
