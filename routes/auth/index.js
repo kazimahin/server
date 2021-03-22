@@ -6,7 +6,7 @@ const cheak_middleware = require("./cheak_middleware/")
 
 
  Router.post("/login",login_middleware)
-Router.post("/cheak",cheak_middleware)
+Router.get("/cheak",cheak_middleware)
 
  
 module.exports = Router 
