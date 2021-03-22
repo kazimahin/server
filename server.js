@@ -39,7 +39,7 @@ app.use('/makemyapp',makemyapp)
 app.use('/com_auth',com_auth)
 app.use("/com_data" , com_data)
 app.use("/website",website )
-
+app.use("/mahin",(req,res)=>res.send("hellow world"))
 
 
 // const options = { key: fs.readFileSync('key.pem'), cert: fs.readFileSync('cert.pem') };      
