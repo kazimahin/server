@@ -9,10 +9,10 @@ module.exports = async (value)=>{
     const {domain,name,stub,code_type,code,principal,contact1,contact2,address,zip,district,about,email,password,re_password,userdata ,template} = value
 
      // img and cheakbox left
-
+     
 
     const  findDomain=()=>{
-        return  modelf("inst_data").findOne({domain})
+        return  modelf("inst_data").findOne({domain:domain+".instbd.xyz"})
                         .then(v=>{
                             if(!v || v===null){
                                 return false
