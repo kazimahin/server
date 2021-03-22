@@ -35,8 +35,7 @@ app.use('/makemyapp',makemyapp)
 app.use('/com_auth',com_auth)
 app.use("/com_data" , com_data)
 app.use("/website",website )
-app.use("/",(req,res)=>res.send("hellow world"))
-
+ 
  
 
 app.listen(process.env.PORT,()=>console.log(`server is running on port ${process.env.PORT}`))
