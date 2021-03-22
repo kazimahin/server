@@ -32,13 +32,13 @@ const website = require("./routes/website/")
 app.use('/auth',auth)
 
 
+app.use('/',(req,res)=>res.send("hellow world"))
 
 //for company web
 app.use('/makemyapp',makemyapp)
 app.use('/com_auth',com_auth)
 app.use("/com_data" , com_data)
 app.use("/website",website )
-app.use('/',(req,res)=>res.send("hellow world"))
 
 
 
