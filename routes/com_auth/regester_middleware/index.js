@@ -4,7 +4,7 @@
 const  modelf = require("../../../model/modelf")
 const regvalidator = require("./RegesterValidator")
 const {clientErr,success, serverErr} =require("../../../handler/resHandler")
-const bcrypt = require("bcrypt")
+const bcryptjs = require("bcryptjs")
 const jwt = require("jsonwebtoken")
 
 
@@ -17,7 +17,7 @@ module.exports = async (req,res)=>{
      if(reqvalidation.isvalid){
 
 
-        const bcryptPwd = bcrypt.hashSync(password,10)
+        const bcryptPwd = bcryptjs.hashSync(password,10)
 
         modelf("com_user")({name,email,phone,password:bcryptPwd}).save()
                                     .then(async v=>{

@@ -1,6 +1,6 @@
 const validator = require("validator")
 const modelf = require("../../../model/modelf")
-const bcrypt = require("bcrypt")
+const bcryptjs = require("bcryptjs")
 const e = require("express")
 
 
@@ -20,7 +20,7 @@ const error = {}
                                         if(v===null){
                                             return {email:false,password:false}
                                         }else{
-                                             const comparepwd = await bcrypt.compare(value.password,v.password)
+                                             const comparepwd = await bcryptjs.compare(value.password,v.password)
                                              if(comparepwd){
                                                 return{email:true,password:true}
                                             }else{

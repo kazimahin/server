@@ -4,7 +4,7 @@ const UserData = require("../../functions/GetUserDetails")
 const validator = require("./makemyapp.validator")
 const modelf = require("../../model/modelf")
 const { clientErr,serverErr,success } = require("../../handler/resHandler")
-const bcrypt = require("bcrypt")
+const bcryptjs = require("bcryptjs")
 
 Router.post("/", async (req,res)=>{
 
@@ -46,7 +46,7 @@ Router.post("/", async (req,res)=>{
  
      if(validation.isvalid){
 
-        const bcryptPwd = bcrypt.hashSync(password,10)
+        const bcryptPwd = bcryptjs.hashSync(password,10)
         modelf("inst_data")({domain:domain+".instbd.xyz",name,stub,code_type,code,principal,contact1,contact2,address,zip,district,about,email,template,password:bcryptPwd,companycode,usermail:userdata.email}).save()
                     .then(  v=>{
                         success(res,"data saved ",v)
