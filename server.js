@@ -20,21 +20,15 @@ app.use(cors({credentials: true, origin: true}))
 app.use(cookieParser())
 
 //import middleware custom function
-const auth = require('./routes/auth/')
-const com_auth = require('./routes/com_auth')
-const makemyapp = require('./routes/makemyapp/') 
-const com_data = require("./routes/com_data/")
-const website = require("./routes/website/")
-// use middleware custom function
-app.use('/auth',auth)
+
+const web = require("./routes/web")
+  
+
+// web route
+
+app.all("/a/a",web)
 
 
- 
-//for company web
-app.use('/makemyapp',makemyapp)
-app.use('/com_auth',com_auth)
-app.use("/com_data" , com_data)
-app.use("/website",website )
  
  
 

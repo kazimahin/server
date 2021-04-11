@@ -1,8 +1,7 @@
 const UserData = require("../../../functions/GetUserDetails")
  const modelf = require("../../../model/modelf")
-const { clientErr,serverErr,success } = require("../../../handler/resHandler")
-const { user } = require("../../../model/schemas")
-
+const { serverErr } = require("../../../handler/resHandler")
+ 
 const sites = async (req,res) =>{
 
    const userdata = await UserData(req)

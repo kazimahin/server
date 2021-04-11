@@ -1,4 +1,4 @@
-const { clientErr } = require("../../../handler/resHandler")
+const { clientErr } = require("../../../../handler/resHandler")
 const loginvalidator = require("./loginValidator")
 const jwt = require("jsonwebtoken")
 

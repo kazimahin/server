@@ -1,18 +1,18 @@
 const e = require("express")
 const validator = require("validator")
-const modelf = require("../../model/modelf")
- 
+const modelf = require("../../../../model/modelf")
+
 
 module.exports = async (value)=>{
 
     const error = {}
-    const {domain,name,stub,code_type,code,principal,contact1,contact2,address,zip,district,about,email,password,re_password,userdata ,template} = value
+    const { name, email , phone ,password ,re_password } = value
 
-     // img and cheakbox left
      
 
+
     const  findDomain=()=>{
-        return  modelf("inst_data").findOne({domain:domain+".instbd.xyz"})
+        return  modelf("com_user").findOne({domain})
                         .then(v=>{
                             if(!v || v===null){
                                 return false
@@ -26,7 +26,7 @@ module.exports = async (value)=>{
     }
 
     const  findEmail=()=>{
-        return  modelf("inst_data").findOne({email})
+        return  modelf("com_user").findOne({email})
                         .then(v=>{
                             if(!v || v===null){
                                 return false
@@ -40,7 +40,7 @@ module.exports = async (value)=>{
     }
 
     const  findNumber=()=>{
-        return  modelf("inst_data").findOne({contact1})
+        return  modelf("com_user").findOne({phone})
                         .then(v=>{
                             console.log(v);
                             if(!v || v===null){
@@ -55,96 +55,11 @@ module.exports = async (value)=>{
     }
 
 
-    //userdata 
-    if (!userdata || userdata== undefined || userdata == null) {
-        error.userdata = "user in unauthorized"
-    }
+   
 
-
-
-
-    //domain
-    if(!domain){
-        error.domain = "domain is empty"
-    }else if( await findDomain()){
-        error.domain = "domain is already exist"
-    }
-
-
-    if(!name ){
+    if(!name){
         error.name = "name is empty"
-    }
-
-    if(!template ){
-        error.template = "template is empty"
-    }
-
-
-    if(!stub){
-        error.stub = "stub is empty"
-    }else if(!validator.isNumeric(stub)){
-        error.stub = "stub is not numaric"
-    }
-
-
-    if(!code_type || code_type == 0){
-        error.code_type = "code type is empty"
-    }
-
-
-
-    if(!code ){
-        error.code = "code is empty"
-    }else if(!validator.isNumeric(code)){
-        error.code = "code is not numaric"
-    }
-
-
-
-    if(!principal ){
-        error.principal = "principal is empty"
-    }
-
-
-
-
-    if(!contact1 ){
-        error.contact1 = "contact1 is empty"
-    }else if(!validator.isNumeric(contact1)){
-        error.contact1 = "contact1 is not numaric"
-    }else if( await findNumber()){
-        error.contact1 = "contact1 is already exist"
-    }
-
-
-
-
- 
-
-    if(!contact2){
-        error.contact2 = "contact2 is empty"
-    }else if(!validator.isNumeric(contact2)){
-        error.contact2 = "contact2 is not valid"
-    }
- 
-
-    if(!address){
-        error.address = "address is empty"
-    }
-
-    if(!zip ){
-        error.zip = "zip is empty"
-    }else if(!validator.isNumeric(zip)){
-        error.zip = "zip is not numaric"
-    }
-
-    if(!district){
-        error.district = "district is empty"
-    }
-
-    if(!about){
-        error.about = "about is empty"
-    }
+    } 
 
 
     if(!email){
@@ -156,6 +71,15 @@ module.exports = async (value)=>{
     }
 
 
+    if(!phone){
+        error.phone = "phone is empty"
+    }else if(!validator.isNumeric(phone)){
+        error.phone = "phone is not valid"
+    }else if( await findNumber()){
+        error.phone = "phone is already exist"
+    }
+    console.log( await findNumber());
+    console.log( phone);
 
      
  
@@ -185,5 +109,3 @@ module.exports = async (value)=>{
     
 
 }
-
-

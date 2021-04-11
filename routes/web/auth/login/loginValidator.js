@@ -1,8 +1,7 @@
 const validator = require("validator")
-const modelf = require("../../../model/modelf")
+const modelf = require("../../../../model/modelf")
 const bcryptjs = require("bcryptjs")
-const e = require("express")
-
+ 
 
 module.exports = async (value)=>{
 
@@ -10,15 +9,18 @@ const error = {}
 
 
 
+
+    const catagory = value.catagory
+ 
+
     
-    const finduser = await modelf("com_user").findOne({email:value.email})
+    const finduser = await modelf("inst_data").findOne({email:value.email})
                                     .then(async v=>{
                                         if(v===null){
                                             return {email:false,password:false}
                                         }else{
-                                            const comparepwd = await bcryptjs.compare(value.password,v.password)
-                                            
-                                            if(comparepwd){
+                                             const comparepwd = await bcryptjs.compare(value.password,v.password)
+                                             if(comparepwd){
                                                 return{email:true,password:true}
                                             }else{
                                                 return{email:true,password:false}
@@ -28,6 +30,11 @@ const error = {}
                                     })
                                     .catch(e=>error.email = "error occered whehn searching")
 
+
+    console.log ( await finduser);
+
+
+
     if(!value.email){
         error.email="email in empty"
     }else if(!validator.isEmail(value.email)){
@@ -35,12 +42,12 @@ const error = {}
     }else if(!finduser.email){
        error.email="email is not exist"
     }
-
+    if(!value.catagory){
+        error.catagory="catagory in empty"
+    }
 
     if(!value.password){
         error.password="pwd in empty"
-    }else if(value.password.length <6){
-        error.password="pwd is short"
     }else if (!finduser.password){
         error.password="password not matched"
     }

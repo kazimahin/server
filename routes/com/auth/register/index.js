@@ -1,9 +1,8 @@
-// req (post) in host/auth/regester
 
 
-const  modelf = require("../../../model/modelf")
+const  modelf = require("../../../../model/modelf")
 const regvalidator = require("./RegesterValidator")
-const {clientErr,success, serverErr} =require("../../../handler/resHandler")
+const {clientErr, serverErr} =require("../../../../handler/resHandler")
 const bcryptjs = require("bcryptjs")
 const jwt = require("jsonwebtoken")
 

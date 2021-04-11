@@ -1,9 +1,8 @@
- const { clientErr ,serverErr } = require("../../../handler/resHandler")
+ const { clientErr ,serverErr } = require("../../../../handler/resHandler")
 const loginvalidator = require("./loginValidator")
 const jwt = require("jsonwebtoken")
-const modelf = require("../../../model/modelf")
-const { all } = require("../../auth")
-
+const modelf = require("../../../../model/modelf")
+ 
 module.exports = async (req,res)=>{
     const { password,email } = req.body
  
