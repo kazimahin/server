@@ -5,9 +5,8 @@ const auth = require("./auth")
 const basic = require("./basic")
  
 
-// Router.all("/auth",auth)
-// Router.post("/basic",basic)
-Router.get("/",(req,res)=>res.send("hellow"))
-
+Router.use("/auth",auth)
+Router.post("/basic",basic)
+ 
 
 module.exports = Router 

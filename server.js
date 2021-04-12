@@ -21,12 +21,12 @@ app.use(cookieParser())
 
 //import middleware custom function
 
-const web = require("./routes/web")
+const routes = require("./routes")
   
 
 // web route
 
-app.all("/a/a",web)
+app.use("/",routes)
 
 
  

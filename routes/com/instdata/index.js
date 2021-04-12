@@ -2,7 +2,7 @@ const UserData = require("../../../functions/GetUserDetails")
  const modelf = require("../../../model/modelf")
 const { serverErr } = require("../../../handler/resHandler")
  
-const sites = async (req,res) =>{
+module.exports = async (req,res) =>{
 
    const userdata = await UserData(req)
 
@@ -29,4 +29,4 @@ const sites = async (req,res) =>{
 }   
 
 
-module.exports = sites
+ 

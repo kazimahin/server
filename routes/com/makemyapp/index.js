@@ -1,12 +1,11 @@
  
-const Router = require("express").Router()
-const UserData = require("../../../functions/GetUserDetails")
+ const UserData = require("../../../functions/GetUserDetails")
 const validator = require("./makemyapp.validator")
 const modelf = require("../../../model/modelf")
 const { clientErr,serverErr,success } = require("../../../handler/resHandler")
 const bcryptjs = require("bcryptjs")
 
-Router.post("/", async (req,res)=>{
+module.exports =  async (req,res)=>{
 
 
     const {domain,name,stub,code_type,code,principal,contact1,contact2,address,zip,district,about,email,password,re_password,template} = req.body
@@ -62,7 +61,6 @@ Router.post("/", async (req,res)=>{
 
    
 
-})
+}
 
 
-module.exports = Router;

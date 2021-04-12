@@ -1,13 +1,13 @@
 //web/
 const express = require("express")
 const Router = express.Router()
-// const web = require("./web/index")
-// const com = require("./com")
- 
-Router.all('/asdf',(req,res)=>{res.send("hellow")})
 
-// Router.all("/web",web)
-// Router.all("/com",com)
+const web = require("./web")
+const com = require("./com")
+ 
+ 
+Router.use("/web",web)
+Router.use("/com",com)
 
 
 module.exports = Router 

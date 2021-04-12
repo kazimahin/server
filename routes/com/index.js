@@ -3,10 +3,10 @@ const Router = require("express").Router()
 
 const auth = require("./auth/")
 const makemyweb = require("./makemyapp/")
-const basic = require("./basic/")
+const instdata = require("./instdata")
  
-Router.all("/auth",auth)
-Router.post("/basic",basic)
+Router.use("/auth",auth)
+Router.post("/instdata",instdata)
 Router.post("/makemyweb",makemyweb)
 
 
