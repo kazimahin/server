@@ -1,17 +1,5 @@
 module.exports={
-    model1:{
-        name:String,
-        age:String
-    },
-    user:{
-        domain:String,
-        email:String,
-        phone:String,
-        inst:String,
-        password:String
-        
-    
-    },
+ 
     com_user:{
         name:String,
         email:String,

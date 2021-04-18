@@ -2,11 +2,13 @@
 const Router = require("express").Router()
 
 const auth = require("./auth")
-const basic = require("./basic")
+const site = require("./site")
+const dash = require("./dash")
  
 
 Router.use("/auth",auth)
-Router.post("/basic",basic)
+Router.use("/dash",dash)
+Router.use("/site",site)
  
 
-module.exports = Router 
+module.exports = Router  

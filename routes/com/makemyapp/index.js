@@ -20,8 +20,7 @@ module.exports =  async (req,res)=>{
 
     const validation = await  validator(dataForValidator)
 
-    console.log(validation)
-
+ 
     const findnumfunc= ()=>{   
 
         const randominstid = Math.floor((Math.random() * 10000000) + 1);

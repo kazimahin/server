@@ -7,8 +7,7 @@ module.exports = async (req,res) =>{
    const userdata = await UserData(req)
 
 
-   console.log(userdata);
-
+ 
     const findsites = await modelf("inst_data").find({usermail:userdata.email})
     .then(v=>{
          return v

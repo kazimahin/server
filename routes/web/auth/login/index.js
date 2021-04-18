@@ -9,8 +9,7 @@ module.exports = async (req,res)=>{
     
 
 
-    console.log({uservalidation,value:req.body});
-    if(uservalidation.isvalid){
+     if(uservalidation.isvalid){
 
         const token = await jwt.sign({email,catagory},"mahin",{expiresIn:"2d"})
          

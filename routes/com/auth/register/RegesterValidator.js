@@ -42,8 +42,7 @@ module.exports = async (value)=>{
     const  findNumber=()=>{
         return  modelf("com_user").findOne({phone})
                         .then(v=>{
-                            console.log(v);
-                            if(!v || v===null){
+                             if(!v || v===null){
                                 return false
                             }else{
                                 return true
@@ -78,9 +77,7 @@ module.exports = async (value)=>{
     }else if( await findNumber()){
         error.phone = "phone is already exist"
     }
-    console.log( await findNumber());
-    console.log( phone);
-
+  
      
  
     

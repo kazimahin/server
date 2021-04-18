@@ -42,8 +42,7 @@ module.exports = async (value)=>{
     const  findNumber=()=>{
         return  modelf("inst_data").findOne({contact1})
                         .then(v=>{
-                            console.log(v);
-                            if(!v || v===null){
+                             if(!v || v===null){
                                 return false
                             }else{
                                 return true

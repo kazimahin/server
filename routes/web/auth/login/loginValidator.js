@@ -31,8 +31,7 @@ const error = {}
                                     .catch(e=>error.email = "error occered whehn searching")
 
 
-    console.log ( await finduser);
-
+ 
 
 
     if(!value.email){
