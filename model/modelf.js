@@ -15,24 +15,48 @@ const models={};
 
 
 
-module.exports = (modelName, schemaName)=>{
+module.exports = (modelName, schemaName, instid)=>{
+
+     if(!instid){
+
+            //model termprary models variable save na thakle ta banaitase
+        if(!eval("models."+modelName)){
+
+                //schema name na thakle ta model name hoiya jaitase
+            (!schemaName || schemaName===null)? schemaName = modelName:null
+            //schema toiri kortase
+            const schema = mongoose.Schema(eval("schemas."+schemaName))
+            //model save kortase models variable e ,ekhon model pawa jabe (models.modelname) e
+            eval("models."+modelName+"= mongoose.model(modelName,schema)") 
+
+        }
+
+        //return saved funcrion 
+        return eval("models."+modelName)
 
 
+    }else{
 
-    //model termprary models variable save na thakle ta banaitase
-    if(!eval("models."+modelName)){
 
-         //schema name na thakle ta model name hoiya jaitase
-        (!schemaName || schemaName===null)? schemaName = modelName:null
-        //schema toiri kortase
-        const schema = mongoose.Schema(eval("schemas."+schemaName))
-        //model save kortase models variable e ,ekhon model pawa jabe (models.modelname) e
-        eval("models."+modelName+"= mongoose.model(modelName,schema)") 
+                //model termprary models variable save na thakle ta banaitase
+                if(!eval("models."+modelName+"_"+instid)){
+
+                    //schema name na thakle ta model name hoiya jaitase
+                    (!schemaName || schemaName===null)? schemaName = modelName   :null
+                    //schema toiri kortase
+                    const schema = mongoose.Schema(eval("schemas."+schemaName))
+                    //model save kortase models variable e ,ekhon model pawa jabe (models.modelname) e
+                    eval("models."+modelName+"_"+instid+"= mongoose.model('"+modelName+"_"+instid+"',schema)") 
+        
+                }
+        
+                //return saved funcrion 
+                return eval("models."+modelName+"_"+instid)
+        
 
     }
 
-    //return saved funcrion 
-    return eval("models."+modelName)
+
 
 }
 

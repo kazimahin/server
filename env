@@ -1,0 +1,4 @@
+PORT = 4000
+MONGODB_URI = "mongodb+srv://instbd:instbd@dbcluster.3yufv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+MODE = prod
+DOMAIN = instbd.xyz 

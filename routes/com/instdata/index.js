@@ -1,4 +1,4 @@
-const UserData = require("../../../functions/GetUserDetails")
+const UserData = require("../../../functions/JwtDecoder")
  const modelf = require("../../../model/modelf")
 const { serverErr } = require("../../../handler/resHandler")
  

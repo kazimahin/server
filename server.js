@@ -22,9 +22,10 @@ app.use(cookieParser())
 //import middleware custom function
 
 const routes = require("./routes")
-  
 
-// web route
+ 
+
+        // web route
 
 app.use("/",routes)
 

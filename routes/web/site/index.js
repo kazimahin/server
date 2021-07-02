@@ -1,7 +1,7 @@
 //web/site/
 
 const Router = require("express").Router()
-
+ 
 const basic = require("./basic/")
  
 

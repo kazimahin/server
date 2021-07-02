@@ -4,17 +4,17 @@ module.exports = [
     icon:"fas fa-envelope", 
     permission:{
       read:true,
+      readFull:true,
+      readMap:"all",
+      readPrivate:false,
+      write:true,
+      writeMap:"all"
+
     },
     link:"/d/" ,
+    exact:true
   },
-  {
-    name:"Dashbord2" ,
-    icon:"fas fa-envelope", 
-    permission:{
-      read:true,
-    },
-    link:"/d/" ,
-  },
+ 
   {
     name:"User" ,
     icon:"fas fa-envelope", 
@@ -27,25 +27,56 @@ module.exports = [
         icon:"fas fa-envelope", 
         permission:{
           read:true,
+          readFull:true,
+          readMap:"all",
+          readPrivate:false,
+          write:true,
+          writeMap:"all"
+
         },
         link:"/d/user/admin"  ,
       },
       {
-        name:"Teacher" , 
+        name:"Employee" , 
         icon:"fas fa-envelope", 
         permission:{
           read:true,
+          readFull:true,
+          readMap:"all",
+          readPrivate:false,
+          write:true,
+          writeMap:"all"
+
         },
-        link:"/d/user/teacher"  ,
+        link:"/d/user/employee"  ,
        },
-      {
+       {
         name:"Student" , 
         icon:"fas fa-envelope", 
         permission:{
           read:true,
-          write:true
+          readFull:true,
+          readMap:"all",
+          readPrivate:false,
+          write:true,
+          writeMap:"all"
+
         },
         link:"/d/user/student"  ,
+      },
+      {
+        name:"Parents" , 
+        icon:"fas fa-envelope", 
+        permission:{
+          read:true,
+          readFull:true,
+          readMap:"all",
+          readPrivate:false,
+          write:true,
+          writeMap:"all"
+
+        },
+        link:"/d/user/parents"  ,
       },
     ]
   },
@@ -57,10 +88,30 @@ module.exports = [
     },
     link:[
       {
+        name:"Session",
+        icon:"fas fa-envelope",
+         permission:{
+          read:true,
+          readFull:true,
+          readMap:"all",
+          readPrivate:false,
+          write:true,
+          writeMap:"all"
+
+        },
+        link:"/d/academic/session"
+      },
+      {
         name:"Class",
         icon:"fas fa-envelope",
         permission:{
           read:true,
+          readFull:true,
+          readMap:"all",
+          readPrivate:false,
+          write:true,
+          writeMap:"all"
+
         },
         link:"/d/academic/class"
       },
@@ -69,77 +120,73 @@ module.exports = [
         icon:"fas fa-envelope",
         permission:{
           read:true,
+          readFull:true,
+          readMap:"all",
+          readPrivate:false,
+          write:true,
+          writeMap:"all"
+
         },
         link:"/d/academic/subject"
+      },
+      {
+        name:"Event",
+        icon:"fas fa-envelope",
+        permission:{
+          read:true,
+          readFull:true,
+          readMap:"all",
+          readPrivate:false,
+          write:true,
+          writeMap:"all"
+
+        },
+        link:"/d/academic/event"
+      },
+      {
+        name:"Notice",
+        icon:"fas fa-envelope",
+        permission:{
+          read:true,
+          readFull:true,
+          readMap:"all",
+          readPrivate:false,
+          write:true,
+          writeMap:"all"
+
+        },
+        link:"/d/academic/notice"
       },
       {
         name:"Syllabus",
         icon:"fas fa-envelope",
         permission:{
           read:true,
+          readFull:true,
+          readMap:"all",
+          readPrivate:false,
+          write:true,
+          writeMap:"all"
+
         },
         link:"/d/academic/syllabus"
+      },
+      {
+        name:"Routine",
+        icon:"fas fa-envelope",
+        permission:{
+          read:true,
+          readFull:true,
+          readMap:"all",
+          readPrivate:false,
+          write:true,
+          writeMap:"all"
+
+        },
+        link:"/d/academic/routine"
       }
     ]
   }
 
 ]
-//  module.exports = [
-//     {
-//       name:"Dashbord" ,
-//       icon:"MailIcon", 
-//       read:true,
-//       link:"/d/" ,
-//     },
-//     {
-//       name:"User" ,
-//       icon:"MailIcon", 
-//       read:true,
-//       link:[
-//         {
-//           name:"Admin" , 
-//           icon:"MailIcon", 
-//           read:true,
-//           link:"/d/user/admin"  ,
-//         },
-//         {
-//           name:"Teacher" , 
-//           icon:"MailIcon", 
-//           read:true,
-//           link:"/d/user/teacher"  ,
-//          },
-//         {
-//           name:"Student" , 
-//           icon:"MailIcon", 
-//           read:true,
-//           link:"/d/user/student"  ,
-//         },
-//       ]
-//     },
-//     {
-//       name:"Academic",
-//       icon:"MailIcon",
-//       read:true,
-//       link:[
-//         {
-//           name:"Class",
-//           icon:"MailIcon",
-//           read:true,
-//           link:"/d/academic/class"
-//         },
-//         {
-//           name:"Subject",
-//           icon:"MailIcon",
-//           read:true,
-//           link:"/d/academic/subject"
-//         },
-//         {
-//           name:"Syllabus",
-//           icon:"MailIcon",
-//           read:true,
-//           link:"/d/academic/syllabus"
-//         }
-//       ]
-//     }
-
-// ]
+ 

@@ -1,5 +1,5 @@
 
- const UserData = require("../../../../functions/GetUserDetails")
+ const UserData = require("../../../../functions/JwtDecoder")
 
 
 module.exports =(req,res,next)=>{

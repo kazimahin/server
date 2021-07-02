@@ -4,7 +4,7 @@ const Router = require("express").Router()
 const login = require("./login/")
 const verify = require("./verify/")
 
-const userdetails = require("../../../functions/GetUserDetails/GetUserDetails")
+const userdetails = require("../../../functions/GetUserDetails/")
 
 
 Router.post("/login",login)

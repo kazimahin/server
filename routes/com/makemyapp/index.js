@@ -1,5 +1,5 @@
  
- const UserData = require("../../../functions/GetUserDetails")
+ const UserData = require("../../../functions/JwtDecoder")
 const validator = require("./makemyapp.validator")
 const modelf = require("../../../model/modelf")
 const { clientErr,serverErr,success } = require("../../../handler/resHandler")

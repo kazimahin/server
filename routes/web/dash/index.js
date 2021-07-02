@@ -2,10 +2,12 @@
 
 const Router = require("express").Router()
 
-// const basic = require("./basic/")
+const user = require("./user")
+const academic = require("./academic")
  
 
-// Router.post("/basic",basic)
+Router.use("/user",user)
+Router.use("/academic",academic)
  
  
 module.exports = Router 
