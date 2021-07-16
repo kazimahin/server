@@ -13,7 +13,7 @@ module.exports = async (req)=>{
     const { name ,qualification ,birth ,phone ,phone2 ,email ,nid ,nationality ,gender ,religion ,blood ,p_address ,p_city ,p_zip ,c_address ,c_city ,c_zip ,      subject,  designation ,startdate, sallary ,f_name,f_nid,f_nationality ,m_name ,m_nid ,m_nationality } = req.body
 
 
-    const samevalidation ={ name ,qualification ,birth  ,nationality ,gender ,religion ,blood ,p_address ,p_city ,p_zip ,c_address ,c_city ,c_zip ,    designation ,startdate, sallary ,  }
+    const samevalidation ={ name ,qualification ,birth  ,nationality ,gender ,religion  ,p_address ,p_city ,p_zip ,c_address ,c_city ,c_zip ,    designation ,startdate, sallary ,  }
  
     //not under validation //f_name,f_nationality ,m_name  ,m_nationality subject,
 

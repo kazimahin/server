@@ -14,7 +14,7 @@ module.exports = async (req)=>{
     const {name,birth,height,weight,blood,religion,nationality,gender,live,parents,     email,phone,address,nid,password,re_password,     admission,} = req.body
 
 
-    const samevalidation ={ name,birth,height,weight,blood,religion,nationality,gender,live,parents,}
+    const samevalidation ={ name,birth,religion,nationality,gender,live,parents,}
  
  
     Object.keys(samevalidation).map((v,index)=>{
@@ -65,6 +65,22 @@ module.exports = async (req)=>{
         
     }else if(!validator.isNumeric( nid)){
         error.nid = "id is not numaric"
+    }  
+
+
+ 
+    if(! height){
+        
+    }else if(!validator.isNumeric( height)){
+        error.height = "height is not numaric"
+    }  
+
+
+ 
+    if(! weight){
+        
+    }else if(!validator.isNumeric( weight)){
+        error.weight = "weight is not numaric"
     }  
 
 
