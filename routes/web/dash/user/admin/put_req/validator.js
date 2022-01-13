@@ -14,16 +14,15 @@ module.exports = async (req)=>{
     const samevalidation ={ name ,qualification ,birth  ,nationality ,gender ,religion  ,p_address ,p_city ,p_zip ,c_address ,c_city ,c_zip  }
  
 
-
-
-    Object.keys(samevalidation).map((v)=>{
-        console.log(v);
+ 
+ 
+    Object.keys(samevalidation).map((v,index)=>{
         if(!eval(v)){
-            eval("error."+v+" = 'field can't be empty'") 
+            eval("error."+v+" = 'cant be empty'") 
         } 
     })
-    
-
+ 
+      
       
     const  findAny = (val)=>{
         

@@ -59,7 +59,16 @@ module.exports = async (req)=>{
                 error.group[i].section[i2].teacher = "teacher is empty"
                 isvalid = false
             }
-            console.log({v2,i2});
+            
+            
+     
+            if(!v2.routine){
+                error.group[i].section[i2].routine = "routine is empty"
+                isvalid = false
+            }
+            
+            
+
 
         })
 

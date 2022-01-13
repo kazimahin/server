@@ -184,6 +184,26 @@ module.exports={
         id:Number,
         name:String,
         value: Object
+    },
+
+
+    //user ===============================
+    exam:{
+        id:Number,
+        for_class:Number,
+        for_group:String,
+        for_section:String,
+
+        type:String,
+
+        subject:Number,
+        date:String,
+        full_mark:Number,
+        examiner:Number,
+        marker:Number,
+         
+        marks:Array,
+
     }
 
 }

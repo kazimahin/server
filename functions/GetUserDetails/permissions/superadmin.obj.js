@@ -186,7 +186,48 @@ module.exports = [
         link:"/d/academic/routine"
       }
     ]
-  }
+  },
+  {
+    name:"Exam" ,
+    icon:"fas fa-envelope", 
+    permission:{
+      read:true,
+    },
+    link:[
+ 
+ 
+      {
+        name:"Exam" , 
+        icon:"fas fa-envelope", 
+        permission:{
+          read:true,
+          readFull:true,
+          readMap:"all",
+          readPrivate:false,
+          write:true,
+          writeMap:"all"
+
+        },
+        link:"/d/exam/exam"  ,
+      },
+      
+      {
+        name:"Result" , 
+        icon:"fas fa-envelope", 
+        permission:{
+          read:true,
+          readFull:true,
+          readMap:"all",
+          readPrivate:false,
+          write:true,
+          writeMap:"all"
+
+        },
+        link:"/d/exam/result"  ,
+      },
+      
+    ]
+  },
 
 ]
  

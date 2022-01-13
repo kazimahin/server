@@ -1,8 +1,7 @@
 
 const modelf = require("../../model/modelf")
 const {serverErr ,clientErr,success} = require("../../handler/resHandler")
-const { find } = require("../GetWebDetails/webRoute")
- 
+  
 module.exports =  findAny = async(catagory,companycode)=>{
 
         var num = Math.floor(Math.random() * 1000000)

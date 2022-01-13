@@ -14,23 +14,22 @@ module.exports = async (req,res)=>{
     
 
 
-    const reqvalidation = await validator(req.body)
+    const reqvalidation = await validator(req)
 
 
      if(reqvalidation.isvalid){
         
 
  
-        modelf("admin",null,req.webdata.companycode).updateOne({_id:req.params.id},req.body, (res1,error)=>{success(res,"updated",{res1,error})})
-                                    // .then(async v=>{
-          
-                                    //     success(res,"admin updated succesfully" ,v)
-                                        
-                                    // })
-                                    // .catch(e=>serverErr(res,"server error occered" , e))
+        modelf("class_",null,req.webdata.companycode).updateOne({id:req.params.id},req.body)
+            .then(async v=>{
 
+                success(res," updated succesfully" ,v)
+                
+            })
+            .catch(e=>serverErr(res,"server error occered" , e))
 
-                            
+                                
         
 
 
