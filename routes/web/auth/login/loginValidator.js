@@ -9,15 +9,13 @@ const error = {}
 
 
 
-
     const {catagory , email ,password } = req.body
  
 
     
     const finduser = await modelf("inst_data").findOne({_id:req.webdata._id})
                                     .then(async v=>{
-                                        console.log(v);
-                                        if(v===null){
+                                         if(await v===null){
                                             return {email:false,password:false}
                                         }else{
 
@@ -25,8 +23,9 @@ const error = {}
 
 
 
-                                             const comparepwd = await bcryptjs.compare(password,v.password)
-                                             if( v.usermail == email && comparepwd ){
+                                            const comparepwd = await bcryptjs.compare(password,v.password)
+                                            if( await v.email == email && await comparepwd ){
+                                                
                                                 return{email:true,password:true , _id:v._id }
                                             }else{
                                                 return{email:true,password:false}
@@ -57,6 +56,7 @@ const error = {}
         error.password="password not matched"
     }
 
+    console.log({error,finduser,a:password,b:finduser});
 
   
       return{

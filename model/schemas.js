@@ -83,7 +83,7 @@ module.exports={
  
         parents:Number,
 
-
+        
 
         password:String,
 
@@ -179,6 +179,10 @@ module.exports={
         teacher:String,
         session:Number,
         group:Array
+
+
+
+
     },
     routine:{
         id:Number,
@@ -203,6 +207,7 @@ module.exports={
         marker:Number,
          
         marks:Array,
+
 
     }
 

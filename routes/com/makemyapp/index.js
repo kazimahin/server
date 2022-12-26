@@ -7,7 +7,7 @@ const bcryptjs = require("bcryptjs")
 
 module.exports =  async (req,res)=>{
 
-
+    console.log("from make my app");
     const {domain,name,stub,code_type,code,principal,contact1,contact2,address,zip,district,about,email,password,re_password,template} = req.body
 
 

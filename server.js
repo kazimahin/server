@@ -10,7 +10,7 @@ const cookieParser = require("cookie-parser")
 require("dotenv").config()
 
 //use module 
-mongoose.connect(process.env.MONGODB_URI,{useNewUrlParser: true,useUnifiedTopology: true})
+mongoose.connect( process.env.MODE == "prod" ? process.env.MONGODB_URI_PROD  :  process.env.MONGODB_URI_DEV,{useNewUrlParser: true,useUnifiedTopology: true})
         .then(()=>console.log("mongoose connected succesfully"))
         .catch((e)=>console.log("mongoose not connnected an error is "+e))
 
@@ -27,7 +27,7 @@ const routes = require("./routes")
 
         // web route
 
-app.use("/",routes)
+app.use("/api/",routes)
 
 
  

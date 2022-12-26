@@ -2,10 +2,10 @@
  const UserData = require("../../../../functions/JwtDecoder")
 
 
-module.exports =(req,res,next)=>{
+module.exports =async (req,res,next)=>{
 
     try{
-        const data = UserData(req)
+        const data = await UserData(req)
 
          res.send({valid:true,data})
 

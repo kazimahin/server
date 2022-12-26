@@ -7,7 +7,7 @@ const instdata = require("./instdata")
  
 Router.use("/auth",auth)
 Router.post("/instdata",instdata)
-Router.post("/makemyweb",makemyweb)
+Router.post("/makemyapp",makemyweb)
 
 
 module.exports = Router 
