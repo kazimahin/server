@@ -45,7 +45,7 @@ module.exports =  async (req,res)=>{
      if(validation.isvalid){
 
         const bcryptPwd = bcryptjs.hashSync(password,10)
-        modelf("inst_data")({domain:domain+".instbd.xyz",name,stub,code_type,code,principal,contact1,contact2,address,zip,district,about,email,template,password:bcryptPwd,companycode,usermail:userdata.email}).save()
+        modelf("inst_data")({domain:domain+process.env.DOMAIN,name,stub,code_type,code,principal,contact1,contact2,address,zip,district,about,email,template,password:bcryptPwd,companycode,usermail:userdata.email}).save()
                     .then(  v=>{
                         success(res,"data saved ",v)
 
